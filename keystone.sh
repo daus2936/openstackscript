@@ -31,7 +31,7 @@ keystone-manage credential_setup --keystone-user keystone --keystone-group keyst
 
 echo "Bootstrap Keystone"
 
-keystone-manage bootstrap --bootstrap-password adminpassword \
+keystone-manage bootstrap --bootstrap-password $ADMIN_PASS \
 --bootstrap-admin-url http://$IP:5000/v3/ \
 --bootstrap-internal-url http://$IP:5000/v3/ \
 --bootstrap-public-url http://$IP:5000/v3/ \
@@ -60,7 +60,6 @@ echo "INSTALLING HORIZON"
 yum -y update
 dnf -y install openstack-dashboard
 
-ALLOWED_HOSTS = ['horizon.example.com', 'localhost']
 
 sed -i '39d' /etc/openstack-dashboard/local_settings
 
@@ -97,7 +96,6 @@ OPENSTACK_API_VERSIONS = {
 }
 EOF
 
-WSGIApplicationGroup %{GLOBAL}
 
 sed -i "4i WSGIApplicationGroup %{GLOBAL}" /etc/httpd/conf.d/openstack-dashboard.conf
 
