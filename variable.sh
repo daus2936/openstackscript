@@ -1,5 +1,5 @@
 #!/bin/bash
-IP="192.168.100.23"
+IP="192.168.100.33"
 KEYSTONE_DBPASS="password"
 ADMIN_PASS="Sepeda36"
 GLANCE_STORAGE="/glance-backend"
@@ -7,4 +7,4 @@ CINDER_STORAGE=""
 STORAGE_FOR_GLANCE="/mnt/glance-inone"
 STORAGE_FOR_CINDER="/mnt/cinder-inone"
 STORAGE_FOR_CINDER_BACKUP="/mnt/cinder-backup-inone"
-NFS_IP="192.168.100.95"
+NFS_IP="192.168.100.34"
