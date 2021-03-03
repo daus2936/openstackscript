@@ -1,6 +1,10 @@
 #!/bin/bash
 
 source variable.sh
+
+systemctl stop firewalld
+systemctl disable firewalld
+
 echo "Installing Glance"
 dnf -y install openstack-glance
 setsebool -P glance_api_can_network on 
