@@ -6,7 +6,6 @@ echo "Installing nfs server"
 dnf install nfs-utils 
 systemctl start nfs-server.service
 systemctl enable nfs-server.service
-systemctl status nfs-server.service
 
 mkdir $STORAGE_FOR_GLANCE $STORAGE_FOR_CINDER $STORAGE_FOR_CINDER_BACKUP
 
