@@ -6,7 +6,7 @@ dnf -y install openstack-glance
 setsebool -P glance_api_can_network on 
 
 echo "Create Glance User"
-source /root/keystonerc
+source $ADMIN_USER_FILE
 openstack project create --domain default --description "Service Project" service
 openstack user create --domain default --project service --password servicepassword glance
 openstack role add --project service --user glance admin

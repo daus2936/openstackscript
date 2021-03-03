@@ -43,7 +43,7 @@ ln -s /usr/share/keystone/wsgi-keystone.conf /etc/httpd/conf.d/
 systemctl start httpd
 systemctl enable httpd
 
-cat <<- EOF >> /root/admin-openrc
+cat <<- EOF >> $ADMIN_USER_FILE
 #!/bin/sh
 export OS_PROJECT_DOMAIN_NAME=default
 export OS_USER_DOMAIN_NAME=default
