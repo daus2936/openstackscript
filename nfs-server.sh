@@ -17,9 +17,9 @@ $STORAGE_FOR_CINDER_BACKUP *(rw,sync,no_root_squash)
 EOF
 
 echo "change chown"
-chown -R 161:161 /mnt/glance-inone
-chown -R 165:165 /mnt/cinder-inone
-chown -R 165:165 /mnt/cinder-backup-inone
+chown -R 161:161 $STORAGE_FOR_GLANCE
+chown -R 165:165 $STORAGE_FOR_CINDER
+chown -R 165:165 $STORAGE_FOR_CINDER_BACKUP
 
 echo "disabling firewall and restarting nfs server"
 systemctl stop firewalld
