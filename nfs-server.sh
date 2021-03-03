@@ -21,6 +21,11 @@ chown -R 161:161 /mnt/glance-inone
 chown -R 165:165 /mnt/cinder-inone
 chown -R 165:165 /mnt/cinder-backup-inone
 
+echo "disabling firewall and restarting nfs server"
+systemctl stop firewalld
+systemctl disable firewalld
+systemctl restart nfs-server.service
+
 
 
 
