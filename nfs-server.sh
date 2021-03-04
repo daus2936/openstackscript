@@ -16,6 +16,8 @@ $STORAGE_FOR_CINDER *(rw,sync,no_root_squash)
 $STORAGE_FOR_CINDER_BACKUP *(rw,sync,no_root_squash)
 EOF
 
+exportfs -rv
+
 echo "change chown"
 chown -R 161:161 $STORAGE_FOR_GLANCE
 chown -R 165:165 $STORAGE_FOR_CINDER
