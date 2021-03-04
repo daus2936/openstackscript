@@ -45,7 +45,7 @@ enabled_backends = nfs
 
 # config cinder-backup (optional)
 backup_driver = cinder.backup.drivers.nfs.NFSBackupDriver
-backup_mount_point_base = $state_path/backup_nfs
+backup_mount_point_base = $state_path_cinder/backup_nfs
 backup_share = $NFS_IP:$STORAGE_FOR_CINDER_BACKUP
 
 [database]
@@ -64,13 +64,13 @@ username = cinder
 password = servicepassword
 
 [oslo_concurrency]
-lock_path = $state_path/tmp
+lock_path = $state_path_cinder/tmp
 
 # line to the end 
 [nfs]
 volume_driver = cinder.volume.drivers.nfs.NfsDriver
 nfs_shares_config = /etc/cinder/nfs_shares
-nfs_mount_point_base = $state_path/mnt
+nfs_mount_point_base = $state_path_cinder/mnt
 EOF
 
 echo "setting nfs_shares"
