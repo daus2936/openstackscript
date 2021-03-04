@@ -36,7 +36,6 @@ cat <<- EOF > /etc/cinder/cinder.conf
 [DEFAULT]
 my_ip = $IP
 log_dir = /var/log/cinder
-state_path = /var/lib/cinder
 auth_strategy = keystone
 transport_url = rabbit://openstack:password@$IP
 glance_api_servers = http://$IP:9292

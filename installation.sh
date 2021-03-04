@@ -1,5 +1,13 @@
 #!/bin/bash
 
+setenforce 0
+systemctl stop firewalld
+systemctl disable firewalld
+echo "Settng NTP"
+
+sed -i "s/pool 2.centos.pool.ntp.org iburst/pool 0.id.pool.ntp.org/" /etc/chrony.conf
+
+echo "Installing openstack ussuri"
 yum -y install centos-release-openstack-ussuri
 yum -y install epel-release
 
