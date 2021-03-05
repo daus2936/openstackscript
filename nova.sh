@@ -144,7 +144,6 @@ su -s /bin/bash nova -c "nova-manage api_db sync"
 su -s /bin/bash nova -c "nova-manage cell_v2 map_cell0" 
 su -s /bin/bash nova -c "nova-manage db sync"
 su -s /bin/bash nova -c "nova-manage cell_v2 create_cell --name cell1"
-su -s /bin/bash nova -c "nova-manage cell_v2 list_cells"
 
 nova-manage cell_v2 discover_hosts --verbose
 
