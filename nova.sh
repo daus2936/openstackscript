@@ -180,6 +180,5 @@ systemctl restart openstack-nova-conductor
 systemctl restart openstack-nova-scheduler
 systemctl restart openstack-nova-novncproxy
 
-su -s /bin/bash nova -c "nova-manage cell_v2 discover_hosts"
 
 
