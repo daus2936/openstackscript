@@ -12,6 +12,8 @@ setsebool -P neutron_can_network on
 setsebool -P haproxy_connect_any on 
 setsebool -P daemons_enable_cluster_mode on
 
+source $ADMIN_USER_FILE
+
 echo "create user neutron in project service"
 openstack user create --domain default --project service --password servicepassword neutron
 openstack role add --project service --user neutron admin 
